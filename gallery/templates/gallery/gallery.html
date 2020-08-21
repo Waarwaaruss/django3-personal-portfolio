@@ -1,0 +1,28 @@
+{% extends 'portfolio/base.html ' %}
+{% block content %}
+
+    <h1>Gallery</h1>
+
+
+
+    <div class="container">
+    <h2 class="mt-5">Gallery</h2>
+    <hr>
+    <div class="row">
+    {% for gallery in galleries %}
+    <div class="col-lg-4 col-md-6">
+
+      
+        <a href="{% url 'gallery:details' gallery.id %}"><h1>{{ gallery.title }}</h1></a>
+
+        <img src="{{ gallery.image.url }}" class="img-fluid mb-2">
+        
+        <h3>{{ gallery.title }}</h3>
+        <p>{{ gallery.description|truncatechars:80  }}</p>
+
+    </div>
+    {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

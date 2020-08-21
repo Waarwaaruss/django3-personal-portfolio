@@ -1,0 +1,13 @@
+{% extends 'portfolio/base.html ' %}
+
+{% block content %}
+
+<img src="{{ gallery.image.url }}" height=200></br>
+
+<h1>{{ gallery.title }} </h1>
+
+{{ gallery.description }}<br>
+
+<a href="{% url 'gallery:gallery' %}">back</a>
+
+{% endblock %}
